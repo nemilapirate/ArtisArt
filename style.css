@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "adelia";
+    src: url("font/adelia.otf") format("opentype");
+}
+@font-face {
+    font-family: "evelins";
+    src: url("font/Evelins.otf") format("opentype");
+}
+@font-face {
+    font-family: "belinda";
+    src: url("font/BelindaAvenue-Regular.otf") format("opentype");
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #323232;
+    font-family: "belinda";
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Style de la navbar */
+.navbar {
+    position: relative;
+    padding-bottom: 10px; /* Ajustez si nécessaire */
+} 
+/* Bordure animée en bas de la navbar */
+.navbar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: #323232;
+    transition: width 0.5s ease-in-out;
+    animation: slide-in 3s ease-in-out forwards;
+}
+  /* Style général pour la navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.content-head-navbar {
+    padding: 0 50px;
+    display: flex;
+}
+  /* Animation des éléments de la liste (de gauche à droite) */
+.nav-list {
+    margin-left: 50px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slide-left-to-right 1s ease-in-out forwards;
+} 
+.main-title {
+    margin: 0;
+    font-family: "adelia";
+    font-size: 3rem;
+    opacity: 0; 
+    animation: fade-in 1s ease-in-out forwards; 
+}
+.info-head {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out 1s forwards;
+}
+.list-navbar {
+    margin: 0;
+    padding-top: 50px;
+    font-size: 1.5rem;
+}
+.nav-list:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.nav-list:nth-child(3) {
+    animation-delay: 1s;
+}
+/* Animation pour le contenu à droite de la navbar */
+.content-right-navbar .title-navbar {
+    padding-right: 100px;
+    text-align: right;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slide-right-to-left 1s ease-in-out forwards;
+}  
+.content-right-navbar .title-navbar:nth-child(2) {
+    animation-delay: 0.5s;
+}
+/* Animation de la bordure gauche pour content-right-navbar */
+.content-right-navbar {
+    position: relative;
+    padding-left: 20px;
+    padding: 0 50px;
+}
+
+.content-right-navbar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 1px;
+    background-color: #323232;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: border-grow 4s ease-in-out forwards;
+}
+  /* Animation de la bordure */
+  @keyframes slide-in {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+}
+/* Animation de gauche à droite */
+@keyframes slide-left-to-right {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+/* Animation de droite à gauche */
+@keyframes slide-right-to-left {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Animation de croissance de la bordure de haut en bas */
+@keyframes border-grow {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+  
+
+/* Main container */
+.main-container {
+    height: 50vh;
+}
+.title {
+    text-align: center;
+    font-size: 3rem;
+}
